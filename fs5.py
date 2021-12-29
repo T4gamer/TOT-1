@@ -105,13 +105,15 @@ class sof1ane_serveur(object):
                 break
             
 if __name__=="__main__":
-    
-    host = "102.164.96.97"
+    hostname = socket.gethostname()
+    local_ip = socket.gethostbyname(hostname)
+    host = local_ip
+    print(host)
     # str(input("\n \033[42m\033[1;30m put Host\033[0;31m :\033[0;33m "))
-    port = 5000
-    try:
-        serveur = sof1ane_serveur(host,port)
-        serveur.start()
-    except:
-        exit()
+    port = 11807
+    # try:
+    serveur = sof1ane_serveur(host,port)
+    serveur.start()
+    # except:
+    #     exit()
         

